@@ -1,0 +1,39 @@
+// ============================================
+// SynthWave '84 — ui-variables.less
+// WICHTIG: Mailsprings eigene Defaults zuerst
+// laden, dann selektiv überschreiben.
+// ============================================
+@import "base/ui-variables";
+@import "_palette";
+
+// --------------------------------------------
+// Mailspring Built-in Variable Overrides
+// (exakte Namen aus Mailsprings Core-Stylesheet)
+// --------------------------------------------
+@accent-primary:                    @neon-pink-bright;
+@accent-primary-dark:               @neon-pink;
+
+@text-color-inverse:                @bg-dark;
+@text-color-inverse-subtle:         fadeout(@bg-dark, 20%);
+@text-color-inverse-very-subtle:    fadeout(@bg-dark, 50%);
+@text-color-heading:                @neon-mint;
+
+@text-color-link:                   @neon-pink;
+@text-color-link-hover:             @neon-pink-bright;
+@text-color-link-active:            @neon-pink-bright;
+
+@toolbar-background-color:          @bg-darker;
+@panel-background-color:            @bg-darker;
+
+@list-bg:                           @bg-dark;
+@list-border:                       @border-dark;
+@list-selected-color:               #ffffff;
+@list-focused-color:                #ffffff;
+
+@input-bg:                          @bg-darkest;
+@input-border:                      @border-dark;
+
+@btn-default-bg-color:              @bg-darkest;
+@dropdown-default-bg-color:         @bg-darker;
+
+@search-max-width:                  450px;

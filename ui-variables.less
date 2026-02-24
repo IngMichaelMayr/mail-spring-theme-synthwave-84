@@ -2,7 +2,7 @@
 // SynthWave '84 - UI Variables
 // ============================================
 
-// Core Background Colors
+// Core Background Colors (theme-intern)
 @background-primary: #262335;
 @background-secondary: #241b2f;
 @background-tertiary: #1a1525;
@@ -15,13 +15,13 @@
 @neon-orange: #f97e72;
 @neon-blue: #36f9f6;
 
-// Text Colors
+// Text Colors (theme-intern)
 @text-color: #ffffff;
 @text-color-subtle: #848bb2;
 @text-color-very-subtle: #6a6a8e;
 @text-glow: #fe4450;
 
-// Borders
+// Borders (theme-intern)
 @border-color: #34294f;
 @border-color-subtle: #2a2040;
 
@@ -29,7 +29,7 @@
 @selection-color: rgba(255, 126, 219, 0.15);
 @selection-border: @neon-pink-bright;
 
-// Component Colors
+// Component Colors (theme-intern)
 @panel-background: @background-secondary;
 @list-background: @background-primary;
 @input-background: @background-tertiary;
@@ -39,7 +39,7 @@
 @glow-mint: 0 0 10px rgba(114, 241, 184, 0.5);
 @glow-text: 0 0 2px #34294f;
 
-// Status Colors
+// Status Colors (theme-intern)
 @success-color: @neon-mint;
 @warning-color: @neon-yellow;
 @error-color: @neon-orange;
@@ -57,3 +57,64 @@
 // Font
 @font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 @font-family-mono: "Fira Code", "JetBrains Mono", Consolas, Monaco, "Courier New", monospace;
+
+// ============================================
+// Mailspring Standard Variable Names
+// Mailsprings Core-Stylesheet liest genau
+// diese Namen — sie müssen hier definiert sein.
+// ============================================
+
+@font-size:                         13px;
+@font-size-small:                   11px;
+
+// Hintergründe
+@background-color:                  @background-primary;
+@base-background-color:             @background-secondary;
+@component-background-color:        @background-secondary;
+
+// Text
+@text-color-inverse:                @background-primary;
+@text-color-selected:               @text-color;
+@text-color-info:                   @neon-blue;
+@text-color-success:                @neon-mint;
+@text-color-warning:                @neon-yellow;
+@text-color-error:                  @neon-orange;
+@text-color-highlight:              @neon-pink;
+
+// Zustands-Hintergründe
+@background-color-info:             rgba(54,  249, 246, 0.15);
+@background-color-success:          rgba(114, 241, 184, 0.15);
+@background-color-warning:          rgba(254, 222,  93, 0.15);
+@background-color-error:            rgba(249, 126, 114, 0.15);
+@background-color-highlight:        rgba(255, 126, 219, 0.10);
+@background-color-selected:         rgba(255, 126, 219, 0.15);
+
+// Borders
+@border-color-primary:              @border-color;
+@border-color-editable:             @border-color;
+
+// Aktive Komponenten
+@component-active-color:            @neon-pink;
+@component-active-background-color: rgba(255, 126, 219, 0.15);
+
+// Buttons
+@button-background-color:           @background-tertiary;
+@button-background-color-hover:     rgba(255, 126, 219, 0.15);
+@button-background-color-selected:  rgba(255, 126, 219, 0.20);
+
+// Badges
+@badge-background-color:            @neon-pink;
+@badge-border-color:                @neon-pink-bright;
+
+// Inputs
+@input-background-color:            @background-tertiary;
+@input-placeholder-color:           @text-color-very-subtle;
+
+// Toolbar
+@toolbar-background-color:          @background-secondary;
+
+// Listen
+@list-background-color:             @background-primary;
+@list-alternate-color:              rgba(255, 255, 255, 0.02);
+@list-selected-color:               rgba(255, 126, 219, 0.15);
+@list-focused-color:                rgba(255, 126, 219, 0.10);

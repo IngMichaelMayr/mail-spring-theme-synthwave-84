@@ -1,0 +1,29 @@
+// ============================================
+// Search
+// ============================================
+
+.search-bar,
+.toolbar-ThreadList .search-bar {
+  background: @bg-darkest;
+  border: 1px solid @border-dark;
+  border-radius: 4px;
+
+  input {
+    background: transparent;
+    color: @text-color;
+
+    &::placeholder {
+      color: @text-color-very-subtle;
+    }
+
+    &:focus {
+      border-color: @neon-mint;
+      box-shadow: @glow-mint;
+      outline: none;
+    }
+  }
+
+  .search-accessory {
+    color: @text-color-subtle;
+  }
+}

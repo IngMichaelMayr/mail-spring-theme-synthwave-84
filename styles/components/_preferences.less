@@ -1,0 +1,38 @@
+// ============================================
+// Preferences
+// ============================================
+
+.preferences-wrap {
+  background: @bg-dark;
+
+  .preferences-sidebar {
+    background: @bg-darker;
+    border-right: 1px solid @border-dark;
+
+    .item {
+      color: @text-color;
+
+      &:hover {
+        background: rgba(255, 126, 219, 0.1);
+      }
+
+      &.active {
+        background: rgba(255, 126, 219, 0.12);
+        border-left: 3px solid @neon-pink-bright;
+        color: @neon-pink;
+      }
+    }
+  }
+
+  .preferences-content {
+    background: @bg-dark;
+    color: @text-color;
+
+    h2, h3 { color: @text-color; }
+
+    .section-header {
+      color: @neon-mint;
+      border-bottom: 1px solid @border-dark;
+    }
+  }
+}

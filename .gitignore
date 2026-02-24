@@ -1,0 +1,16 @@
+# Screenshots & Arbeits-Dateien
+#*.png
+#*.jpg
+#*.jpeg
+PRD.odt
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Claude
+.claude/

@@ -1,0 +1,61 @@
+// ============================================
+// Thread List
+// ============================================
+
+// Container
+.column-ThreadList,
+.thread-list,
+.list-container,
+.scroll-region,
+.scroll-region-content {
+  background: @bg-dark !important;
+}
+
+.thread-list {
+  .list-item {
+    background: @bg-dark !important;
+    border-bottom: 1px solid @border-darker;
+    transition: background 0.15s ease;
+
+    &:hover {
+      background: rgba(255, 126, 219, 0.07) !important;
+    }
+
+    &.focused,
+    &.selected {
+      background: rgba(255, 126, 219, 0.1) !important;
+      border-left: 3px solid @neon-pink-bright;
+      box-shadow: inset 5px 0px 10px -5px rgba(249, 42, 173, 0.4);
+    }
+
+    &.unread {
+      .subject      { color: #ffffff; font-weight: 600; }
+      .participants { color: @neon-mint; font-weight: 600; }
+    }
+  }
+
+  .subject      { color: @text-color; }
+  .participants { color: @text-color-subtle; }
+  .snippet      { color: @text-color-very-subtle; }
+  .timestamp    { color: @text-color-subtle; }
+}
+
+// Blurred window state (wenn Fenster keinen Fokus hat)
+body.blurred .thread-list .list-item.focused {
+  background: @bg-dark !important;
+  border-left-color: @border-dark;
+  box-shadow: none;
+}
+
+// Draft list
+.draft-list {
+  .draft-item {
+    background: @bg-darker;
+    border: 1px solid @border-dark;
+    border-left: 3px solid @neon-yellow;
+
+    &:hover {
+      box-shadow: 0 0 8px rgba(254, 222, 93, 0.3);
+    }
+  }
+}

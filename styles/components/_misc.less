@@ -1,0 +1,238 @@
+// ============================================
+// Buttons
+// ============================================
+
+.btn {
+  background: @bg-darkest;
+  color: @text-color;
+  border: 1px solid @border-dark;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(255, 126, 219, 0.15);
+    border-color: @neon-pink;
+  }
+
+  &.btn-primary {
+    background: @neon-pink;
+    color: @bg-dark;
+    border-color: @neon-pink;
+
+    &:hover {
+      background: @neon-pink-bright;
+      box-shadow: @glow-pink;
+    }
+  }
+
+  &.btn-success {
+    background: @neon-mint;
+    color: @bg-dark;
+    border-color: @neon-mint;
+
+    &:hover { box-shadow: @glow-mint; }
+  }
+
+  &.btn-danger {
+    background: @neon-orange;
+    color: @bg-dark;
+    border-color: @neon-orange;
+  }
+}
+
+// ============================================
+// Inputs & Forms
+// ============================================
+
+input, textarea, select {
+  background: @bg-darkest;
+  color: @text-color;
+  border: 1px solid @border-dark;
+  border-radius: 4px;
+
+  &:focus {
+    border-color: @neon-pink;
+    box-shadow: @glow-pink;
+    outline: none;
+  }
+
+  &::placeholder {
+    color: @text-color-very-subtle;
+  }
+}
+
+// ============================================
+// Modal / Dialogs
+// ============================================
+
+.modal {
+  background: @bg-darker;
+  border: 1px solid @border-dark;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+
+  .modal-header {
+    border-bottom: 1px solid @border-dark;
+    color: @text-color;
+  }
+
+  .modal-body { color: @text-color; }
+
+  .modal-footer { border-top: 1px solid @border-dark; }
+}
+
+// ============================================
+// Tags / Thread Icons
+// ============================================
+
+.mail-label {
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 6px;
+}
+
+.thread-icon {
+  &.thread-icon-star       { color: @neon-yellow; }
+  &.thread-icon-attachment { color: @text-color-subtle; }
+}
+
+// ============================================
+// Icons — Neon Colors + SVG Masks
+// ============================================
+
+.neon-icon-mask() {
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+
+.icon {
+  &.icon-composer  { background-color: @neon-mint;   .neon-icon-mask(); -webkit-mask-image: url('../assets/neon-pen.svg'); }
+  &.icon-inbox     { background-color: @neon-pink;   .neon-icon-mask(); -webkit-mask-image: url('../assets/neon-inbox.svg'); }
+  &.icon-sent      { background-color: @neon-mint;   .neon-icon-mask(); -webkit-mask-image: url('../assets/neon-sent.svg'); }
+  &.icon-drafts    { background-color: @neon-yellow; .neon-icon-mask(); -webkit-mask-image: url('../assets/neon-drafts.svg'); }
+  &.icon-trash     { background-color: @neon-orange; .neon-icon-mask(); -webkit-mask-image: url('../assets/neon-trash.svg'); }
+  &.icon-archive   { background-color: @neon-blue;   .neon-icon-mask(); -webkit-mask-image: url('../assets/neon-archive.svg'); }
+  &.icon-spam      { background-color: @neon-orange; .neon-icon-mask(); -webkit-mask-image: url('../assets/neon-spam.svg'); }
+  &.icon-starred   { background-color: @neon-yellow; .neon-icon-mask(); -webkit-mask-image: url('../assets/neon-star.svg'); }
+}
+
+.img {
+  &.content-mask {
+    background-color: @text-color-subtle;
+    .neon-icon-mask();
+
+    &:hover { background-color: @neon-mint; }
+  }
+}
+
+// ============================================
+// Empty State
+// ============================================
+
+.empty-state {
+  color: @text-color-subtle;
+
+  .message { color: @text-color-very-subtle; }
+  img { opacity: 0.4; }
+}
+
+// ============================================
+// Contact Card
+// ============================================
+
+.contact-card {
+  background: @bg-darker;
+  border: 1px solid @border-dark;
+  border-radius: 8px;
+
+  .contact-name  { color: @neon-mint; }
+  .contact-email { color: @text-color-subtle; }
+}
+
+// ============================================
+// Activity Dashboard
+// ============================================
+
+.activity-dashboard {
+  background: @bg-dark;
+
+  .activity-item {
+    background: @bg-darker;
+    border: 1px solid @border-dark;
+    border-radius: 4px;
+
+    &:hover {
+      border-color: @neon-pink;
+      box-shadow: @glow-pink;
+    }
+  }
+}
+
+// ============================================
+// Snooze Popover
+// ============================================
+
+.snooze-popover {
+  background: @bg-darker;
+  border: 1px solid @border-dark;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+
+  .option {
+    color: @text-color;
+
+    &:hover {
+      background: rgba(255, 126, 219, 0.15);
+      color: @neon-pink;
+    }
+  }
+}
+
+// ============================================
+// Quick Actions / Swipe Actions
+// ============================================
+
+.quick-actions {
+  .action {
+    background: @bg-darkest;
+    border: 1px solid @border-dark;
+    border-radius: 4px;
+
+    &:hover {
+      border-color: @neon-mint;
+      background: rgba(255, 126, 219, 0.1);
+
+      .action-icon { color: @neon-mint; }
+    }
+  }
+}
+
+.swipe-action {
+  &.archive { background: @neon-mint; }
+  &.trash   { background: @neon-orange; }
+  &.snooze  { background: @neon-blue; }
+}
+
+.thread-injected-quick-actions {
+  background: @bg-darker;
+  border-radius: 4px;
+
+  .btn {
+    color: @text-color-subtle;
+
+    &:hover { color: @neon-pink; }
+  }
+}
+
+// ============================================
+// Print
+// ============================================
+
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+}

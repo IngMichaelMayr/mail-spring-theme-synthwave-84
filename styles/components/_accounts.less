@@ -1,0 +1,71 @@
+// ============================================
+// Sidebar / Accounts
+// ============================================
+
+.column-RootSidebar,
+.account-sidebar {
+  background: @bg-darker;
+  border-right: 1px solid @border-dark;
+}
+
+.account-sidebar {
+  .item {
+    color: @text-color;
+    transition: all 0.15s ease;
+
+    &:hover {
+      background: rgba(255, 126, 219, 0.1);
+    }
+
+    &.selected {
+      background: rgba(255, 126, 219, 0.12);
+      border-left: 3px solid @neon-pink-bright;
+      box-shadow: inset 5px 0px 10px -5px rgba(249, 42, 173, 0.5);
+
+      .name {
+        color: @neon-pink;
+      }
+    }
+
+    .name {
+      color: @text-color;
+    }
+
+    .item-count-box {
+      background: @neon-pink;
+      color: @bg-dark;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+  }
+
+  .heading {
+    color: @text-color-subtle;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+}
+
+.outline-view {
+  .item {
+    color: @text-color;
+
+    &:hover {
+      background: rgba(255, 126, 219, 0.1);
+    }
+
+    &.selected {
+      background: rgba(255, 126, 219, 0.12);
+      border-left: 3px solid @neon-pink-bright;
+
+      .item-name {
+        color: @neon-pink;
+      }
+    }
+  }
+
+  .heading {
+    color: @text-color-subtle;
+  }
+}

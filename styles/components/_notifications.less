@@ -1,0 +1,22 @@
+// ============================================
+// Notifications / Toasts
+// ============================================
+
+.notifications-sticky {
+  .notification {
+    background: @bg-darker;
+    border: 1px solid @border-dark;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+
+    &.success { border-left: 3px solid @neon-mint; }
+    &.error   { border-left: 3px solid @neon-orange; }
+    &.warning { border-left: 3px solid @neon-yellow; }
+    &.info    { border-left: 3px solid @neon-blue; }
+  }
+}
+
+.undo-redo-toast .content {
+  background: @neon-pink-bright;
+  border-radius: 4px;
+}

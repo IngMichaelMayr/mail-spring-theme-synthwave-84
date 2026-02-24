@@ -11,9 +11,10 @@
 // Global Styles
 // ============================================
 
+html,
 body {
-  background-color: @background-primary;
-  color: @text-color;
+  background-color: @background-primary !important;
+  color: @text-color !important;
   font-family: @font-family;
 }
 
@@ -48,8 +49,8 @@ body {
 // ============================================
 
 .sheet-toolbar {
-  background: @background-secondary;
-  border-bottom: 1px solid @border-color;
+  background: @background-secondary !important;
+  border-bottom: 1px solid @border-color !important;
 
   .btn {
     background: transparent;
@@ -86,8 +87,8 @@ body {
 
 .column-RootSidebar,
 .account-sidebar {
-  background: @background-secondary;
-  border-right: 1px solid @border-color;
+  background: @background-secondary !important;
+  border-right: 1px solid @border-color !important;
 }
 
 .account-sidebar {
@@ -160,7 +161,7 @@ body {
 
 .column-ThreadList,
 .thread-list {
-  background: @background-primary;
+  background: @background-primary !important;
 }
 
 .thread-list {
@@ -229,7 +230,7 @@ body {
 
 .column-MessageList,
 .message-list {
-  background: @background-primary;
+  background: @background-primary !important;
 }
 
 .message-item-wrap {
@@ -551,46 +552,70 @@ input, textarea, select {
 }
 
 // ============================================
-// Icons - Neon Coloring
+// Icons - Neon Coloring + Custom SVG Masks
 // ============================================
+
+// Shared mask properties for all neon icons
+.neon-icon-mask() {
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
 
 .icon {
   &.icon-composer {
     background-color: @neon-mint;
+    .neon-icon-mask();
+    -webkit-mask-image: url('../assets/neon-pen.svg');
   }
 
   &.icon-inbox {
     background-color: @neon-pink;
+    .neon-icon-mask();
+    -webkit-mask-image: url('../assets/neon-inbox.svg');
   }
 
   &.icon-sent {
     background-color: @neon-mint;
+    .neon-icon-mask();
+    -webkit-mask-image: url('../assets/neon-sent.svg');
   }
 
   &.icon-drafts {
     background-color: @neon-yellow;
+    .neon-icon-mask();
+    -webkit-mask-image: url('../assets/neon-drafts.svg');
   }
 
   &.icon-trash {
     background-color: @neon-orange;
+    .neon-icon-mask();
+    -webkit-mask-image: url('../assets/neon-trash.svg');
   }
 
   &.icon-archive {
     background-color: @neon-blue;
+    .neon-icon-mask();
+    -webkit-mask-image: url('../assets/neon-archive.svg');
   }
 
   &.icon-spam {
     background-color: @neon-orange;
+    .neon-icon-mask();
+    -webkit-mask-image: url('../assets/neon-spam.svg');
   }
 
   &.icon-starred {
     background-color: @neon-yellow;
+    .neon-icon-mask();
+    -webkit-mask-image: url('../assets/neon-star.svg');
   }
 }
 
 .img {
   &.content-mask {
     background-color: @text-color-subtle;
+    .neon-icon-mask();
 
     &:hover {
       background-color: @neon-mint;
@@ -619,7 +644,7 @@ input, textarea, select {
 // ============================================
 
 .preferences-wrap {
-  background: @background-primary;
+  background: @background-primary !important;
 
   .preferences-sidebar {
     background: @background-secondary;

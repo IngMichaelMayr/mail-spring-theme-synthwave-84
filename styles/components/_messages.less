@@ -1,0 +1,98 @@
+// ============================================
+// Message View
+// ============================================
+
+.column-MessageList,
+.message-list {
+  background: @bg-dark;
+}
+
+.message-item-wrap {
+  .message-item-white-wrap {
+    background: @bg-darker;
+    border: 1px solid @border-dark;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .message-header {
+    border-bottom: 1px solid @border-dark;
+
+    .message-participants {
+      color: @text-color;
+
+      .participant-name  { color: @neon-mint; font-weight: 500; }
+      .participant-email { color: @text-color-subtle; }
+    }
+
+    .message-time { color: @text-color-subtle; }
+  }
+
+  .message-body {
+    color: @text-color;
+
+    a {
+      color: @neon-pink;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+        text-shadow: 0 0 5px rgba(255, 126, 219, 0.5);
+      }
+    }
+
+    blockquote {
+      border-left: 3px solid @neon-pink;
+      padding-left: 8px;
+      color: @text-color-subtle;
+    }
+
+    code {
+      background: @bg-darkest;
+      color: @neon-yellow;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    pre {
+      background: @bg-darkest;
+      border: 1px solid @border-dark;
+      border-radius: 4px;
+      padding: 8px;
+
+      code {
+        background: transparent;
+        padding: 0;
+      }
+    }
+  }
+}
+
+.message-header {
+  .from-contact { color: @neon-mint; }
+  .to-contact   { color: @text-color-subtle; }
+}
+
+// Attachments
+.attachment {
+  background: @bg-darkest;
+  border: 1px solid @border-dark;
+  border-radius: 4px;
+
+  &:hover {
+    border-color: @neon-mint;
+    box-shadow: 0 0 8px rgba(114, 241, 184, 0.3);
+  }
+
+  .attachment-name { color: @text-color; }
+  .attachment-size { color: @text-color-subtle; }
+}
+
+// Calendar Events
+.event-card {
+  background: @bg-darker;
+  border-left: 3px solid @neon-blue;
+
+  .event-title { color: @text-color; }
+  .event-time  { color: @neon-blue; }
+}
