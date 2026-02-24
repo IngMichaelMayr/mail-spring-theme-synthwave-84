@@ -4,18 +4,29 @@
 
 .column-MessageList,
 .message-list {
+  background: @bg-dark !important;
+}
+
+// ID-Selektor — Mailspring verwendet #message-list intern
+#message-list {
   background: @bg-dark;
+}
+
+.column-MessageList .scroll-region-content,
+.column-MessageList .scroll-region {
+  background: @bg-dark !important;
 }
 
 .message-item-wrap {
   .message-item-white-wrap {
-    background: @bg-darker;
+    background: @bg-darker !important;
     border: 1px solid @border-dark;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   }
 
   .message-header {
+    background: @bg-darker !important;
     border-bottom: 1px solid @border-dark;
 
     .message-participants {
@@ -29,6 +40,7 @@
   }
 
   .message-body {
+    background: @bg-darker !important;
     color: @text-color;
 
     a {
@@ -73,7 +85,112 @@
   .to-contact   { color: @text-color-subtle; }
 }
 
+// ============================================
+// Right Sidebar — Participants / Contact Panel
+// ============================================
+
+.column-MessageListSidebar,
+.participants-sidebar,
+.thread-participants-sidebar {
+  background: @bg-darker !important;
+  border-left: 1px solid @border-dark;
+}
+
+// Participant dropdown / select in top-right toolbar area
+.participants-text-field,
+.thread-participants-text {
+  background: @bg-darkest !important;
+  color: @text-color !important;
+  border: 1px solid @border-dark !important;
+  border-radius: 4px;
+
+  select {
+    background: @bg-darkest;
+    color: @text-color;
+    border: none;
+  }
+}
+
+// Participant images / avatars column
+.sidebar-participant-images,
+.participant-avatars {
+  background: @bg-darker !important;
+  padding: 8px;
+
+  .participant-image-wrap,
+  .participant-avatar {
+    border: 2px solid @border-dark;
+    border-radius: 50%;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      border-color: @neon-mint;
+      box-shadow: @glow-mint;
+    }
+  }
+}
+
+// Contact profile card in sidebar
+.contact-profile,
+.sidebar-contact-card {
+  background: @bg-darkest !important;
+  border: 1px solid @border-dark !important;
+  border-radius: 6px;
+  margin: 8px;
+
+  .contact-name,
+  .profile-name {
+    color: @neon-mint !important;
+    font-weight: 600;
+    text-shadow: 0 0 6px rgba(114, 241, 184, 0.4);
+  }
+
+  .contact-email,
+  .profile-email {
+    color: @text-color-subtle !important;
+  }
+
+  .contact-info-row {
+    border-top: 1px solid @border-dark;
+    color: @text-color-subtle;
+  }
+}
+
+// RightClickableContact — Mailspring native contact element
+.RightClickableContact {
+  color: @text-color !important;
+
+  &:hover { color: @neon-mint !important; }
+}
+
+// Sidebar section dividers
+.sidebar-section {
+  background: @bg-darker !important;
+  border-bottom: 1px solid @border-dark;
+  color: @text-color;
+
+  h2, h3, .sidebar-section-title {
+    color: @text-color-subtle;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+}
+
+// Native <select> dropdown used in message header area
+.message-header-right select,
+.column-MessageListSidebar select {
+  background: @bg-darkest;
+  color: @text-color;
+  border: 1px solid @border-dark;
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+// ============================================
 // Attachments
+// ============================================
+
 .attachment {
   background: @bg-darkest;
   border: 1px solid @border-dark;

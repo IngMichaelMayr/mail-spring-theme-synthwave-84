@@ -1,71 +1,121 @@
 // ============================================
-// Composer
+// Composer — Standalone & Inline Reply
 // ============================================
 
-.composer-inner-wrap {
-  background: @bg-darker;
-  border: 1px solid @border-dark;
-  border-radius: 8px;
-}
+// Inline Composer — korrekte Selektoren aus Mailspring-Quellcode
+#message-list {
+  background: transparent;
 
-.composer-header {
-  background: @bg-darker;
-  border-bottom: 1px solid @border-dark;
-
-  .composer-field {
-    .composer-field-label {
-      color: @text-color-subtle;
-    }
-
-    input,
-    .participant-token {
-      color: @text-color;
-      background: @bg-darkest;
-      border: 1px solid @border-dark;
-      border-radius: 4px;
-
-      &:focus {
-        border-color: @neon-pink;
-        box-shadow: @glow-pink;
-        outline: none;
-      }
-    }
-
-    .participant-token {
-      background: rgba(255, 126, 219, 0.15);
-      border-color: @neon-pink;
-
-      &:hover {
-        background: rgba(255, 126, 219, 0.25);
-      }
-    }
-  }
-}
-
-.composer-body {
-  background: @bg-dark;
-  color: @text-color;
-
-  .contenteditable {
-    color: @text-color;
-  }
-}
-
-.composer-footer {
-  background: @bg-darker;
-  border-top: 1px solid @border-dark;
-
-  .btn {
-    background: @neon-pink;
-    color: @bg-dark;
-    border: none;
-    border-radius: 4px;
-    font-weight: 600;
-    transition: all 0.2s ease;
+  // Reply-Bereich Wrapper
+  .footer-reply-area-wrap {
+    background: @bg-darker !important;
+    border: 1px solid @border-dark;
+    box-shadow: none;
 
     &:hover {
-      background: @neon-pink-bright;
-      box-shadow: @glow-pink;
+      background: @bg-dark !important;
     }
+  }
+
+  // Inline Composer (Quick-Reply innerhalb Thread)
+  .message-item-white-wrap {
+    &.composer-outer-wrap,
+    &.composer-outer-wrap.focused {
+      background: @bg-darker !important;
+      border: 1px solid @border-dark;
+      box-shadow: none;
+
+      // Formatierungs-Toolbar + Footer-Buttons
+      .composer-action-bar-wrap {
+        background: @bg-darkest !important;
+        border-top: 1px solid @border-dark;
+        box-shadow: none;
+      }
+
+      // Rich-Text-Toolbar Hintergrund
+      .RichEditor-toolbar .inner {
+        background: none;
+        border-bottom: 1px solid @border-dark;
+      }
+
+      // Trennlinie zwischen Header-Feldern
+      .composer-participant-field:after {
+        background: @border-dark;
+      }
+
+      // Fokus-Zustand
+      &.focused {
+        background: @bg-dark !important;
+        border-color: @neon-pink;
+
+        .composer-action-bar-wrap {
+          background: @bg-darkest !important;
+          border-color: @border-dark;
+        }
+      }
+    }
+  }
+}
+
+// Standalone Composer (eigenes Fenster)
+.composer-full-window .composer-inner-wrap {
+  .composer-action-bar-wrap {
+    background: @bg-darkest !important;
+    border-top: 1px solid @border-dark;
+    box-shadow: none;
+  }
+}
+
+// Action-Bar global (Formatierungs-Toolbar + Footer)
+.composer-action-bar-wrap {
+  background: @bg-darkest !important;
+  border-top: 1px solid @border-dark;
+  box-shadow: none;
+}
+
+// Header-Bereich (To:, From:, Subject:)
+.composer-header,
+.composer-header-wrap {
+  background: @bg-darker !important;
+  border-bottom: 1px solid @border-dark;
+
+  .composer-field-label { color: @text-color-subtle; }
+
+  input, .tokenizing-field input {
+    color: @text-color !important;
+    background: transparent !important;
+
+    &:focus { outline: none; }
+  }
+
+  .participant-token, .token {
+    background: rgba(255, 126, 219, 0.15) !important;
+    border: 1px solid @neon-pink !important;
+    color: @text-color !important;
+    border-radius: 4px;
+
+    &:hover { background: rgba(255, 126, 219, 0.25) !important; }
+  }
+}
+
+// Body / Contenteditable
+.composer-body-wrap,
+.compose-body,
+.contenteditable {
+  background: @bg-dark !important;
+  color: @text-color !important;
+}
+
+// Send-Button
+.btn-send,
+.send-action-button {
+  background: @neon-pink !important;
+  color: @bg-dark !important;
+  border: none !important;
+  font-weight: 600;
+
+  &:hover {
+    background: @neon-pink-bright !important;
+    box-shadow: @glow-pink !important;
   }
 }

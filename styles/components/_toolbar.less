@@ -38,11 +38,37 @@
   }
 }
 
-// Linux / Windows: Header-Leiste
+// Linux / Windows: Header-Leiste + Menüleiste
 body.platform-linux,
 body.platform-win32 {
   .sheet-toolbar-container {
     background: @bg-darker !important;
+  }
+
+  // Weißer Streifen unter der nativen Menüleiste
+  #menus,
+  .menu-bar,
+  .main-menu,
+  #application-menu,
+  .window-title-bar,
+  .titlebar,
+  .window-region-header {
+    background: @bg-darkest !important;
+    color: @text-color !important;
+    border-bottom: 1px solid @border-dark !important;
+
+    .menu,
+    .menu-item,
+    menuitem {
+      background: transparent;
+      color: @text-color;
+
+      &:hover,
+      &.open {
+        background: rgba(255, 126, 219, 0.15);
+        color: @neon-pink;
+      }
+    }
   }
 }
 
@@ -52,5 +78,31 @@ body.blurred {
   .sheet-toolbar-container {
     background: @bg-darker !important;
     border-bottom-color: @border-dark !important;
+  }
+}
+
+// Selection-Bar — erscheint wenn Threads markiert werden
+// Ohne diesen Block bleibt der Bereich weiß (Mailspring-Default)
+.sheet-toolbar .selection-bar .absolute {
+  background-color: @bg-darker !important;
+  border-left: none;
+  border-right: none;
+  top: -1px;
+
+  .inner .centered {
+    color: @text-color-subtle;
+
+    & + .btn-toolbar {
+      background: @neon-pink-bright;
+      color: @bg-dark;
+      height: 26px;
+      margin-right: 11px;
+      transition: background-color 100ms;
+
+      &:hover {
+        background: @neon-pink;
+        box-shadow: @glow-pink;
+      }
+    }
   }
 }

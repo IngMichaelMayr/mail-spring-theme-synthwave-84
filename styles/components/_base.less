@@ -8,6 +8,17 @@ body {
   color: @text-color;
 }
 
+// Verhindert weiße Streifen zwischen Menü- und Toolbarbereich
+.RootSheet,
+.Sheet,
+.sheets-container,
+#application,
+.window-region-header,
+.titlebar,
+#menus {
+  background-color: @bg-darker;
+}
+
 ::selection {
   background: rgba(255, 126, 219, 0.3);
   color: #ffffff;
