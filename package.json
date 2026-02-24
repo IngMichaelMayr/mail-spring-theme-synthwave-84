@@ -1,0 +1,13 @@
+{
+  "name": "synthwave-84",
+  "title": "SynthWave '84",
+  "displayName": "SynthWave '84",
+  "version": "1.0.0",
+  "description": "A Mailspring theme inspired by the popular SynthWave '84 VS Code theme. Features neon glow effects, hot pink and cyan accents on a deep purple background.",
+  "author": "Michael",
+  "license": "MIT",
+  "engines": {
+    "mailspring": ">=1.9.0"
+  },
+  "theme": "ui"
+}

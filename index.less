@@ -1,0 +1,836 @@
+// ============================================
+// SynthWave '84 - Mailspring Theme
+// ============================================
+// A dark theme with neon glow effects inspired by
+// the popular SynthWave '84 VS Code theme.
+// ============================================
+
+@import "ui-variables.less";
+
+// ============================================
+// Global Styles
+// ============================================
+
+body {
+  background-color: @background-primary;
+  color: @text-color;
+  font-family: @font-family;
+}
+
+::selection {
+  background: @selection-color;
+}
+
+// ============================================
+// Scrollbars
+// ============================================
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: @background-tertiary;
+}
+
+::-webkit-scrollbar-thumb {
+  background: @border-color;
+  border-radius: @border-radius;
+
+  &:hover {
+    background: @neon-pink;
+  }
+}
+
+// ============================================
+// Toolbar / Header
+// ============================================
+
+.sheet-toolbar {
+  background: @background-secondary;
+  border-bottom: 1px solid @border-color;
+
+  .btn {
+    background: transparent;
+    color: @text-color;
+    border: 1px solid @border-color;
+    border-radius: @border-radius;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: @selection-color;
+      border-color: @neon-pink;
+      box-shadow: @glow-pink;
+    }
+
+    &:active, &.btn-active {
+      background: rgba(255, 126, 219, 0.2);
+      border-color: @neon-pink-bright;
+    }
+  }
+
+  .btn-toolbar {
+    background: transparent;
+    color: @text-color-subtle;
+
+    &:hover {
+      color: @neon-mint;
+    }
+  }
+}
+
+// ============================================
+// Sidebar / Account Sidebar
+// ============================================
+
+.column-RootSidebar,
+.account-sidebar {
+  background: @background-secondary;
+  border-right: 1px solid @border-color;
+}
+
+.account-sidebar {
+  .item {
+    color: @text-color;
+    transition: all 0.15s ease;
+
+    &:hover {
+      background: @selection-color;
+    }
+
+    &.selected {
+      background: rgba(255, 126, 219, 0.1);
+      border-left: 3px solid @neon-pink-bright;
+      box-shadow: inset 5px 0px 10px -5px rgba(249, 42, 173, 0.5);
+
+      .name {
+        color: @neon-pink;
+        text-shadow: @glow-text;
+      }
+    }
+
+    .name {
+      color: @text-color;
+    }
+
+    .item-count-box {
+      background: @neon-pink;
+      color: @background-primary;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+  }
+
+  .heading {
+    color: @text-color-subtle;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+}
+
+// Outline View (Folders)
+.outline-view {
+  .item {
+    color: @text-color;
+
+    &:hover {
+      background: @selection-color;
+    }
+
+    &.selected {
+      background: rgba(255, 126, 219, 0.1);
+      border-left: 3px solid @neon-pink-bright;
+
+      .item-name {
+        color: @neon-pink;
+      }
+    }
+  }
+
+  .heading {
+    color: @text-color-subtle;
+  }
+}
+
+// ============================================
+// Thread List / Message List
+// ============================================
+
+.column-ThreadList,
+.thread-list {
+  background: @background-primary;
+}
+
+.thread-list {
+  .list-item {
+    border-bottom: 1px solid @border-color-subtle;
+    transition: all 0.15s ease;
+
+    &:hover {
+      background: @selection-color;
+    }
+
+    &.focused, &.selected {
+      background: rgba(255, 126, 219, 0.08);
+      border-left: 3px solid @neon-pink-bright;
+      box-shadow: inset 5px 0px 10px -5px rgba(249, 42, 173, 0.4);
+    }
+
+    &.unread {
+      .subject {
+        color: @text-color;
+        font-weight: 600;
+      }
+
+      .participants {
+        color: @neon-mint;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .subject {
+    color: @text-color;
+  }
+
+  .participants {
+    color: @text-color-subtle;
+  }
+
+  .snippet {
+    color: @text-color-very-subtle;
+  }
+
+  .timestamp {
+    color: @text-color-subtle;
+  }
+}
+
+// List Container
+.list-container {
+  background: @background-primary;
+
+  .list-item {
+    &:hover {
+      background: @selection-color;
+    }
+
+    &.focused {
+      background: rgba(255, 126, 219, 0.1);
+    }
+  }
+}
+
+// ============================================
+// Message View
+// ============================================
+
+.column-MessageList,
+.message-list {
+  background: @background-primary;
+}
+
+.message-item-wrap {
+  .message-item-white-wrap {
+    background: @background-secondary;
+    border: 1px solid @border-color;
+    border-radius: @border-radius-large;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .message-header {
+    border-bottom: 1px solid @border-color;
+
+    .message-participants {
+      color: @text-color;
+
+      .participant-name {
+        color: @neon-mint;
+        font-weight: 500;
+      }
+
+      .participant-email {
+        color: @text-color-subtle;
+      }
+    }
+
+    .message-time {
+      color: @text-color-subtle;
+    }
+  }
+
+  .message-body {
+    color: @text-color;
+
+    a {
+      color: @neon-pink;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+        text-shadow: 0 0 5px rgba(255, 126, 219, 0.5);
+      }
+    }
+
+    blockquote {
+      border-left: 3px solid @neon-pink;
+      padding-left: @spacing-standard;
+      color: @text-color-subtle;
+    }
+
+    code {
+      background: @background-tertiary;
+      color: @neon-yellow;
+      padding: 2px 6px;
+      border-radius: @border-radius;
+      font-family: @font-family-mono;
+    }
+
+    pre {
+      background: @background-tertiary;
+      border: 1px solid @border-color;
+      border-radius: @border-radius;
+      padding: @spacing-standard;
+
+      code {
+        background: transparent;
+        padding: 0;
+      }
+    }
+  }
+}
+
+// Message Header
+.message-header {
+  .from-contact {
+    color: @neon-mint;
+  }
+
+  .to-contact {
+    color: @text-color-subtle;
+  }
+}
+
+// ============================================
+// Composer
+// ============================================
+
+.composer-inner-wrap {
+  background: @background-secondary;
+  border: 1px solid @border-color;
+  border-radius: @border-radius-large;
+}
+
+.composer-header {
+  background: @background-secondary;
+  border-bottom: 1px solid @border-color;
+
+  .composer-field {
+    .composer-field-label {
+      color: @text-color-subtle;
+    }
+
+    input, .participant-token {
+      color: @text-color;
+      background: @input-background;
+      border: 1px solid @border-color;
+      border-radius: @border-radius;
+
+      &:focus {
+        border-color: @neon-pink;
+        box-shadow: @glow-pink;
+      }
+    }
+
+    .participant-token {
+      background: @selection-color;
+      border-color: @neon-pink;
+
+      &:hover {
+        background: rgba(255, 126, 219, 0.25);
+      }
+    }
+  }
+}
+
+.composer-body {
+  background: @background-primary;
+  color: @text-color;
+
+  .contenteditable {
+    color: @text-color;
+  }
+}
+
+.composer-footer {
+  background: @background-secondary;
+  border-top: 1px solid @border-color;
+
+  .btn {
+    background: @neon-pink;
+    color: @background-primary;
+    border: none;
+    border-radius: @border-radius;
+    font-weight: 600;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: @neon-pink-bright;
+      box-shadow: @glow-pink;
+    }
+  }
+}
+
+// ============================================
+// Search
+// ============================================
+
+.search-bar {
+  background: @background-secondary;
+  border: 1px solid @border-color;
+  border-radius: @border-radius-large;
+
+  input {
+    background: transparent;
+    color: @text-color;
+
+    &::placeholder {
+      color: @text-color-subtle;
+    }
+
+    &:focus {
+      border-color: @neon-mint;
+      box-shadow: @glow-mint;
+    }
+  }
+
+  .search-accessory {
+    color: @text-color-subtle;
+  }
+}
+
+// ============================================
+// Notifications / Toasts
+// ============================================
+
+.notifications-sticky {
+  .notification {
+    background: @background-secondary;
+    border: 1px solid @border-color;
+    border-radius: @border-radius;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+    &.success {
+      border-left: 3px solid @success-color;
+    }
+
+    &.error {
+      border-left: 3px solid @error-color;
+    }
+
+    &.warning {
+      border-left: 3px solid @warning-color;
+    }
+
+    &.info {
+      border-left: 3px solid @info-color;
+    }
+  }
+}
+
+// ============================================
+// Modal / Dialogs
+// ============================================
+
+.modal {
+  background: @background-secondary;
+  border: 1px solid @border-color;
+  border-radius: @border-radius-large;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+  .modal-header {
+    border-bottom: 1px solid @border-color;
+    color: @text-color;
+  }
+
+  .modal-body {
+    color: @text-color;
+  }
+
+  .modal-footer {
+    border-top: 1px solid @border-color;
+  }
+}
+
+// ============================================
+// Buttons
+// ============================================
+
+.btn {
+  background: @background-tertiary;
+  color: @text-color;
+  border: 1px solid @border-color;
+  border-radius: @border-radius;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: @selection-color;
+    border-color: @neon-pink;
+  }
+
+  &.btn-primary {
+    background: @neon-pink;
+    color: @background-primary;
+    border-color: @neon-pink;
+
+    &:hover {
+      background: @neon-pink-bright;
+      box-shadow: @glow-pink;
+    }
+  }
+
+  &.btn-success {
+    background: @neon-mint;
+    color: @background-primary;
+    border-color: @neon-mint;
+
+    &:hover {
+      box-shadow: @glow-mint;
+    }
+  }
+
+  &.btn-danger {
+    background: @error-color;
+    color: @background-primary;
+    border-color: @error-color;
+  }
+}
+
+// ============================================
+// Inputs & Forms
+// ============================================
+
+input, textarea, select {
+  background: @input-background;
+  color: @text-color;
+  border: 1px solid @border-color;
+  border-radius: @border-radius;
+
+  &:focus {
+    border-color: @neon-pink;
+    box-shadow: @glow-pink;
+    outline: none;
+  }
+
+  &::placeholder {
+    color: @text-color-very-subtle;
+  }
+}
+
+// ============================================
+// Tags / Labels
+// ============================================
+
+.mail-label {
+  border-radius: @border-radius;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 6px;
+}
+
+.thread-icon {
+  &.thread-icon-star {
+    color: @neon-yellow;
+  }
+
+  &.thread-icon-attachment {
+    color: @text-color-subtle;
+  }
+}
+
+// ============================================
+// Icons - Neon Coloring
+// ============================================
+
+.icon {
+  &.icon-composer {
+    background-color: @neon-mint;
+  }
+
+  &.icon-inbox {
+    background-color: @neon-pink;
+  }
+
+  &.icon-sent {
+    background-color: @neon-mint;
+  }
+
+  &.icon-drafts {
+    background-color: @neon-yellow;
+  }
+
+  &.icon-trash {
+    background-color: @neon-orange;
+  }
+
+  &.icon-archive {
+    background-color: @neon-blue;
+  }
+
+  &.icon-spam {
+    background-color: @neon-orange;
+  }
+
+  &.icon-starred {
+    background-color: @neon-yellow;
+  }
+}
+
+.img {
+  &.content-mask {
+    background-color: @text-color-subtle;
+
+    &:hover {
+      background-color: @neon-mint;
+    }
+  }
+}
+
+// ============================================
+// Empty State
+// ============================================
+
+.empty-state {
+  color: @text-color-subtle;
+
+  .message {
+    color: @text-color-very-subtle;
+  }
+
+  img {
+    opacity: 0.5;
+  }
+}
+
+// ============================================
+// Preferences
+// ============================================
+
+.preferences-wrap {
+  background: @background-primary;
+
+  .preferences-sidebar {
+    background: @background-secondary;
+    border-right: 1px solid @border-color;
+
+    .item {
+      color: @text-color;
+
+      &:hover {
+        background: @selection-color;
+      }
+
+      &.active {
+        background: rgba(255, 126, 219, 0.1);
+        border-left: 3px solid @neon-pink-bright;
+        color: @neon-pink;
+      }
+    }
+  }
+
+  .preferences-content {
+    background: @background-primary;
+    color: @text-color;
+
+    h2, h3 {
+      color: @text-color;
+    }
+
+    .section-header {
+      color: @neon-mint;
+      border-bottom: 1px solid @border-color;
+    }
+  }
+}
+
+// ============================================
+// Activity View
+// ============================================
+
+.activity-dashboard {
+  background: @background-primary;
+
+  .activity-item {
+    background: @background-secondary;
+    border: 1px solid @border-color;
+    border-radius: @border-radius;
+
+    &:hover {
+      border-color: @neon-pink;
+      box-shadow: @glow-pink;
+    }
+  }
+}
+
+// ============================================
+// Contact Card
+// ============================================
+
+.contact-card {
+  background: @background-secondary;
+  border: 1px solid @border-color;
+  border-radius: @border-radius-large;
+
+  .contact-name {
+    color: @neon-mint;
+  }
+
+  .contact-email {
+    color: @text-color-subtle;
+  }
+}
+
+// ============================================
+// Attachments
+// ============================================
+
+.attachment {
+  background: @background-tertiary;
+  border: 1px solid @border-color;
+  border-radius: @border-radius;
+
+  &:hover {
+    border-color: @neon-mint;
+    box-shadow: 0 0 8px rgba(114, 241, 184, 0.3);
+  }
+
+  .attachment-name {
+    color: @text-color;
+  }
+
+  .attachment-size {
+    color: @text-color-subtle;
+  }
+}
+
+// ============================================
+// Calendar / Events
+// ============================================
+
+.event-card {
+  background: @background-secondary;
+  border-left: 3px solid @neon-blue;
+
+  .event-title {
+    color: @text-color;
+  }
+
+  .event-time {
+    color: @neon-blue;
+  }
+}
+
+// ============================================
+// Snooze
+// ============================================
+
+.snooze-popover {
+  background: @background-secondary;
+  border: 1px solid @border-color;
+  border-radius: @border-radius-large;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+
+  .option {
+    color: @text-color;
+
+    &:hover {
+      background: @selection-color;
+      color: @neon-pink;
+    }
+  }
+}
+
+// ============================================
+// Draft List
+// ============================================
+
+.draft-list {
+  .draft-item {
+    background: @background-secondary;
+    border: 1px solid @border-color;
+    border-left: 3px solid @neon-yellow;
+
+    &:hover {
+      box-shadow: 0 0 8px rgba(254, 222, 93, 0.3);
+    }
+  }
+}
+
+// ============================================
+// Quick Actions
+// ============================================
+
+.quick-actions {
+  .action {
+    background: @background-tertiary;
+    border: 1px solid @border-color;
+    border-radius: @border-radius;
+
+    &:hover {
+      border-color: @neon-mint;
+      background: @selection-color;
+
+      .action-icon {
+        color: @neon-mint;
+      }
+    }
+  }
+}
+
+// ============================================
+// Thread Injections (Open/Link Tracking)
+// ============================================
+
+.thread-injected-quick-actions {
+  background: @background-secondary;
+  border-radius: @border-radius;
+
+  .btn {
+    color: @text-color-subtle;
+
+    &:hover {
+      color: @neon-pink;
+    }
+  }
+}
+
+// ============================================
+// Swipe Actions
+// ============================================
+
+.swipe-action {
+  &.archive {
+    background: @neon-mint;
+  }
+
+  &.trash {
+    background: @neon-orange;
+  }
+
+  &.snooze {
+    background: @neon-blue;
+  }
+}
+
+// ============================================
+// Print Styles (for completeness)
+// ============================================
+
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+}
