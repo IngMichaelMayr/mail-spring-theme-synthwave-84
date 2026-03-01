@@ -18,11 +18,11 @@
   }
 
   // Inline Composer (Quick-Reply innerhalb Thread)
-  .message-item-white-wrap {
+  #message-list .message-item-wrap .message-item-white-wrap {
     &.composer-outer-wrap,
     &.composer-outer-wrap.focused {
-      background: @bg-darker !important;
-      border: 1px solid @border-dark;
+      background-color: @bg-darker !important;
+      border: 1px solid @border-dark !important;
       box-shadow: none;
 
       // Formatierungs-Toolbar + Footer-Buttons
@@ -33,9 +33,14 @@
       }
 
       // Rich-Text-Toolbar Hintergrund
-      .RichEditor-toolbar .inner {
-        background: none;
+      .RichEditor-toolbar {
+        background-color: @bg-darkest !important;
+        background: @bg-darkest !important;
         border-bottom: 1px solid @border-dark;
+
+        .inner {
+          background: @bg-darkest !important;
+        }
       }
 
       // Trennlinie zwischen Header-Feldern
@@ -73,6 +78,41 @@
   box-shadow: none;
 }
 
+// Rich-Text-Toolbar global (betrifft beide: inline + standalone)
+.RichEditor-toolbar {
+  background: @bg-darkest !important;
+  border-bottom: 1px solid @border-dark;
+  background-color: @bg-darkest !important;
+
+  .inner {
+    background: @bg-darkest !important;
+  }
+}
+
+// WYSIWYG Toolbar — flache Selektoren (identisch mit Mailsprings Selektor + !important)
+// Mailspring: (1,5,0) ohne !important → unser !important gewinnt immer
+#message-list .message-item-wrap .message-item-white-wrap.composer-outer-wrap .RichEditor-toolbar {
+  background: @bg-darkest !important;
+  background-color: @bg-darkest !important;
+}
+#message-list .message-item-wrap .message-item-white-wrap.composer-outer-wrap .RichEditor-toolbar .floating-container {
+  background: @bg-darkest !important;
+  background-color: @bg-darkest !important;
+}
+#message-list .message-item-wrap .message-item-white-wrap.composer-outer-wrap .RichEditor-toolbar .inner {
+  background: @bg-darkest !important;
+  background-color: @bg-darkest !important;
+}
+#message-list .message-item-wrap .message-item-white-wrap.composer-outer-wrap .RichEditor-toolbar .inner.display-deferrable {
+  background: @bg-darkest !important;
+  background-color: @bg-darkest !important;
+}
+// Kein roter Border
+#message-list .message-item-wrap .message-item-white-wrap.composer-outer-wrap .RichEditor-toolbar * {
+  border-color: @border-dark !important;
+  outline: none !important;
+}
+
 // Header-Bereich (To:, From:, Subject:)
 .composer-header,
 .composer-header-wrap {
@@ -104,6 +144,19 @@
 .contenteditable {
   background: @bg-dark !important;
   color: @text-color !important;
+}
+
+
+// input[type="color"] global: kein neon-pink Focus-Border (Farb-Picker in Toolbar)
+input[type="color"] {
+  border: 1px solid @border-dark !important;
+  border-radius: 2px !important;
+
+  &:focus {
+    border-color: @border-dark !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
 }
 
 // Send-Button
